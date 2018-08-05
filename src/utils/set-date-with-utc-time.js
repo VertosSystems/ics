@@ -18,14 +18,14 @@ export default function setDateWithUTCtime(args = []) {
   if (args.length > 0) {
     const [year, month, date, hours = 0, minutes = 0, seconds = 0] = args
 
-    const formattedDate = moment([
+    const formattedDate = moment.utc([
       year,
       month - 1,
       date,
       hours,
       minutes,
       seconds
-    ]).utc().format('YYYYMMDDTHHmm00') + 'Z'
+    ]).format('YYYYMMDDTHHmm00') + 'Z'
 
     return formattedDate
   }
